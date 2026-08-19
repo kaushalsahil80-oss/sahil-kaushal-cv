@@ -33,7 +33,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation */
     nav {
       position: sticky;
       top: 0;
@@ -72,28 +71,40 @@
       color: var(--accent);
     }
 
-    /* Container */
     .container {
       max-width: 1050px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Hero Section */
+    /* Hero / Header Section */
     header {
       padding: 4.5rem 0 3rem 0;
       text-align: center;
       border-bottom: 1px solid var(--card-border);
     }
 
+    .profile-img-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+    }
+
     header h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       letter-spacing: 1.5px;
       margin-bottom: 0.5rem;
     }
 
     header h2 {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: var(--accent);
       font-weight: 500;
       margin-bottom: 1.5rem;
@@ -121,7 +132,6 @@
       color: var(--accent);
     }
 
-    /* Section Styles */
     section {
       padding: 4rem 0;
       border-bottom: 1px solid var(--card-border);
@@ -145,7 +155,6 @@
       border-radius: 2px;
     }
 
-    /* Profile / Summary */
     .summary-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -153,6 +162,48 @@
       padding: 2rem;
       font-size: 1.05rem;
       color: #d1d5db;
+    }
+
+    /* Cocktail Gallery Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-info {
+      padding: 1rem;
+    }
+
+    .gallery-info h4 {
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .gallery-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     /* Skills Grid */
@@ -251,7 +302,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Education & Certifications */
+    /* Education */
     .edu-item {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -295,7 +346,6 @@
       transform: scale(1.1);
     }
 
-    /* Footer */
     footer {
       padding: 2.5rem 0;
       text-align: center;
@@ -303,13 +353,12 @@
       font-size: 0.9rem;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
       }
       header h1 {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
       }
       .timeline-header {
         flex-direction: column;
@@ -324,6 +373,7 @@
     <a href="#" class="brand">SAHIL KAUSHAL</a>
     <ul class="nav-links">
       <li><a href="#summary">About</a></li>
+      <li><a href="#gallery">Signatures</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
@@ -333,18 +383,21 @@
   <!-- Hero Header -->
   <header>
     <div class="container">
+      <div class="profile-img-container">
+        <img class="profile-img" src="https://i.ibb.co/Y4LRjSyp/Whats-App-Image-2026-08-20-at-3-47-29-AM-3.jpg" alt="Sahil Kaushal">
+      </div>
       <h1>SAHIL KAUSHAL</h1>
       <h2>Head Mixologist & Beverage Specialist</h2>
       <div class="contact-bar">
         <span><i class="fa-solid fa-location-dot"></i> Thane / Mumbai, India</span>
-        <a href="tel:+918169642968"><i class="fa-solid fa-phone"></i> +91 8169642968</a>
-        <a href="mailto:Kaushalsahil80@gmail.com"><i class="fa-solid fa-envelope"></i> Kaushalsahil80@gmail.com</a>
-        <a href="https://instagram.com/bartendersahil" target="_blank"><i class="fa-brands fa-instagram"></i> @bartendersahil</a>
+        <a href="tel:+918169642968"><i class="fa-solid fa-phone"></i> +91 8169642968[span_0](start_span)[span_0](end_span)</a>
+        <a href="mailto:Kaushalsahil80@gmail.com"><i class="fa-solid fa-envelope"></i> Kaushalsahil80@gmail.com[span_1](start_span)[span_1](end_span)</a>
+        <a href="https://instagram.com/bartendersahil" target="_blank"><i class="fa-brands fa-instagram"></i> @bartendersahil[span_2](start_span)[span_2](end_span)</a>
       </div>
     </div>
   </header>
 
-  <!-- Professional Summary -->
+  <!-- Summary -->
   <section id="summary">
     <div class="container">
       <h2 class="section-title">Professional Summary</h2>
@@ -354,7 +407,53 @@
     </div>
   </section>
 
-  <!-- Core Competencies -->
+  <!-- Cocktail Gallery / Signature Series -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Signature Series & Creations</h2>
+      <div class="gallery-grid">
+        
+        <!-- Cocktail 1 -->
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Cocktail 1">
+          <div class="gallery-info">
+            <h4>Bespoke Creation 1</h4>
+            <p>House infusion, botanicals, and balanced citrus notes.</p>
+          </div>
+        </div>
+
+        <!-- Cocktail 2 -->
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Cocktail 2">
+          <div class="gallery-info">
+            <h4>Signature Mix 2</h4>
+            <p>Modern clarification technique with craft spirit base.</p>
+          </div>
+        </div>
+
+        <!-- Cocktail 3 -->
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80" alt="Cocktail 3">
+          <div class="gallery-info">
+            <h4>Seasonal Concoction</h4>
+            <p>Artisanal syrups with aromatic bitter garnishes.</p>
+          </div>
+        </div>
+
+        <!-- Cocktail 4 -->
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=600&q=80" alt="Cocktail 4">
+          <div class="gallery-info">
+            <h4>High-Volume Luxury Craft</h4>
+            <p>Precision mixology built for fast-paced service execution.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
   <section id="skills">
     <div class="container">
       <h2 class="section-title">Core Competencies & Skills</h2>
@@ -395,13 +494,12 @@
     </div>
   </section>
 
-  <!-- Professional Experience -->
+  <!-- Experience -->
   <section id="experience">
     <div class="container">
       <h2 class="section-title">Professional Experience</h2>
       <div class="timeline">
 
-        <!-- Experience 1: Current Role -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -418,7 +516,6 @@
           </ul>
         </div>
 
-        <!-- Experience 2: AER -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -428,13 +525,12 @@
             <span class="date">Dec 2024 – Apr 2026</span>
           </div>
           <ul>
-            <li>Collaborated closely with the culinary team to develop signature cocktail menus and promotional offerings[span_1](start_span)[span_1](end_span).</li>
-            <li>Acted as primary liaison and host for visiting bartenders from leading global bars, driving professional knowledge sharing[span_2](start_span)[span_2](end_span).</li>
-            <li>Managed bar teams and optimized staff rosters to ensure seamless luxury operational standards[span_3](start_span)[span_3](end_span).</li>
+            <li>Collaborated closely with the culinary team to develop signature cocktail menus and promotional offerings[span_3](start_span)[span_3](end_span).</li>
+            <li>Acted as primary liaison and host for visiting bartenders from leading global bars, driving professional knowledge sharing[span_4](start_span)[span_4](end_span).</li>
+            <li>Managed bar teams and optimized staff rosters to ensure seamless luxury operational standards[span_5](start_span)[span_5](end_span).</li>
           </ul>
         </div>
 
-        <!-- Experience 3: The Ned -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -444,13 +540,12 @@
             <span class="date">Apr 2024 – Nov 2024</span>
           </div>
           <ul>
-            <li>Managed full bar operations including inventory control, staff scheduling, and MICROS cash handling during peak volume[span_4](start_span)[span_4](end_span).</li>
-            <li>Crafted specialty coffee, espresso drinks, bespoke cocktails, and house-made concoctions with consistent quality[span_5](start_span)[span_5](end_span).</li>
-            <li>Conducted mixology workshops and tasting sessions while cultivating strong loyalty with regular clientele[span_6](start_span)[span_6](end_span).</li>
+            <li>Managed full bar operations including inventory control, staff scheduling, and MICROS cash handling during peak volume[span_6](start_span)[span_6](end_span).</li>
+            <li>Crafted specialty coffee, espresso drinks, bespoke cocktails, and house-made concoctions with consistent quality[span_7](start_span)[span_7](end_span).</li>
+            <li>Conducted mixology workshops and tasting sessions while cultivating strong loyalty with regular clientele[span_8](start_span)[span_8](end_span).</li>
           </ul>
         </div>
 
-        <!-- Experience 4: Koko -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -460,13 +555,12 @@
             <span class="date">Oct 2023 – Mar 2024</span>
           </div>
           <ul>
-            <li>Played a pivotal role in the venue's grand opening by leading staff onboarding and establishing efficient bar prep workflows[span_7](start_span)[span_7](end_span).</li>
-            <li>Delivered high-standard mixology and wine recommendations aligned with modern industry trends[span_8](start_span)[span_8](end_span).</li>
-            <li>Maintained rigorous standards for signature in-house infusions and syrup preparations[span_9](start_span)[span_9](end_span).</li>
+            <li>Played a pivotal role in the venue's grand opening by leading staff onboarding and establishing efficient bar prep workflows[span_9](start_span)[span_9](end_span).</li>
+            <li>Delivered high-standard mixology and wine recommendations aligned with modern industry trends[span_10](start_span)[span_10](end_span).</li>
+            <li>Maintained rigorous standards for signature in-house infusions and syrup preparations[span_11](start_span)[span_11](end_span).</li>
           </ul>
         </div>
 
-        <!-- Experience 5: Foo Rex -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -476,13 +570,12 @@
             <span class="date">Dec 2022 – Sep 2023</span>
           </div>
           <ul>
-            <li>Assisted in successfully launching the outlet by training floor staff and streamlining service bottlenecks[span_10](start_span)[span_10](end_span).</li>
-            <li>Provided personalized guest recommendations and maintained composure during rapid, high-volume shifts[span_11](start_span)[span_11](end_span).</li>
-            <li>Oversaw inventory controls and resolved guest inquiries with proactive problem-solving[span_12](start_span)[span_12](end_span).</li>
+            <li>Assisted in successfully launching the outlet by training floor staff and streamlining service bottlenecks[span_12](start_span)[span_12](end_span).</li>
+            <li>Provided personalized guest recommendations and maintained composure during rapid, high-volume shifts[span_13](start_span)[span_13](end_span).</li>
+            <li>Oversaw inventory controls and resolved guest inquiries with proactive problem-solving[span_14](start_span)[span_14](end_span).</li>
           </ul>
         </div>
 
-        <!-- Experience 6: Foo Bandra -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -492,12 +585,11 @@
             <span class="date">May 2022 – Nov 2022</span>
           </div>
           <ul>
-            <li>Prepared daily mise-en-place, managed dry store inventories, and maintained pristine bar sanitation[span_13](start_span)[span_13](end_span).</li>
-            <li>Crafted bespoke cocktails and mocktails tailored to individual guest flavor profiles[span_14](start_span)[span_14](end_span).</li>
+            <li>Prepared daily mise-en-place, managed dry store inventories, and maintained pristine bar sanitation[span_15](start_span)[span_15](end_span).</li>
+            <li>Crafted bespoke cocktails and mocktails tailored to individual guest flavor profiles[span_16](start_span)[span_16](end_span).</li>
           </ul>
         </div>
 
-        <!-- Experience 7: Sai Palace -->
         <div class="timeline-item">
           <div class="timeline-header">
             <div>
@@ -507,7 +599,7 @@
             <span class="date">Nov 2020 – Nov 2021</span>
           </div>
           <ul>
-            <li>Crafted classic cocktails and mocktails while maintaining stock levels and daily inventory logs[span_15](start_span)[span_15](end_span).</li>
+            <li>Crafted classic cocktails and mocktails while maintaining stock levels and daily inventory logs[span_17](start_span)[span_17](end_span).</li>
           </ul>
         </div>
 
@@ -522,22 +614,22 @@
       
       <div class="edu-item">
         <h4>Professional Bartending Course (Grade A)</h4>
-        <p>Barjockey Kandivali | 2019 – 2022[span_16](start_span)[span_16](end_span)</p>
+        <p>Barjockey Kandivali | 2019 – 2022[span_18](start_span)[span_18](end_span)</p>
       </div>
 
       <div class="edu-item">
         <h4>Bachelor of Commerce (B.Com) – 7.37 CGPA</h4>
-        <p>Ghanshyamdas Saraf College, Malad (W) | 2019 – 2022[span_17](start_span)[span_17](end_span)</p>
+        <p>Ghanshyamdas Saraf College, Malad (W) | 2019 – 2022[span_19](start_span)[span_19](end_span)</p>
       </div>
 
       <div class="edu-item">
         <h4>Higher Secondary Certificate (HSC) – 74.15%</h4>
-        <p>St. Francis D'Assisi Junior College, Borivali (W) | 2017 – 2019[span_18](start_span)[span_18](end_span)</p>
+        <p>St. Francis D'Assisi Junior College, Borivali (W) | 2017 – 2019[span_20](start_span)[span_20](end_span)</p>
       </div>
 
       <div class="edu-item">
         <h4>Secondary School Certificate (SSC) – 77.20%</h4>
-        <p>St. Xavier's High School, Mira Road (E) | 2017[span_19](start_span)[span_19](end_span)</p>
+        <p>St. Xavier's High School, Mira Road (E) | 2017[span_21](start_span)[span_21](end_span)</p>
       </div>
 
     </div>
